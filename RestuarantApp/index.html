@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resturant</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+</head>
+
+<body style="background-color:white">
+    <h1 style="text-align: center;">Welcome To Restaurant</h1><br>
+
+    <div class="left">
+        <h2>Tables</h2>
+        <div class="searchtable">
+            <input type="text" placeholder="Search" id="serach" onkeyup="searchFun()">
+            <button type="submit">Search</button>
+        </div>
+        <div class="tableitem" id="table1" ondragover="make(event)" ondrop="drop(event,this)" >
+            <h3 >Table-1</h3><br>
+            <p id="itemst1">Items: 0 </p>
+            <p id="totalt1">Total: 0 </p>
+            <button id="view1"  onclick="showTable('t1')">Order Details</button>
+            
+            <div class="summary" id="summary-t1">
+                <div class="content">
+                   <div class="summary-order">
+                       <h2>Order Details</h2>
+                       <span class="close" onclick="closeTable('t1')">&times;</span>
+                   </div>
+                   <div class="modal-body" id = "body1">
+                       <table class ="table table-striped" id="t1">
+                           <thead>
+                               <tr>
+                                   <th>Items</th>
+                                   <th>Price</th>
+                                   <th>Quantity</th>
+                                   <th>Delete</th>
+                               </tr>
+                           </thead>
+                       </table>
+                       <p id="Total1"></p>
+                   </div>
+                   <div class="modal-footer">
+                    <button id="reset1" onclick="resetTable('t1')">Generate Bill</button>
+                </div>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="tableitem" id="table2" ondragover="make(event)" ondrop="drop(event,this)" >
+            <h3>Table-2</h3><br>
+            <p id="itemst2">Items: 0 </p>
+            <p id="totalt2">Total: 0 </p>
+            <button id="view2"  onclick="showTable('t2')">Order Details</button>
+            <div class="summary" id="summary-t2">
+                <div class="content">
+                   <div class="summary-order">
+                       <h2>Order Details</h2>
+                       <span class="close" onclick="closeTable('t2')">&times;</span>
+                   </div>
+                   <div class="modal-body" id = "body2">
+                       <table class ="table table-striped" id="t2">
+                           <thead>
+                               <tr>
+                                   <th>Items</th>
+                                   <th>Price</th>
+                                   <th>Quantity</th>
+                                   <th>Delete</th>
+                               </tr>
+                           </thead>
+                       </table>
+                       <p id="Total2"></p>
+                   </div>
+                   <div class="modal-footer">
+                    <button id="reset2" onclick="resetTable('t2')">Generate Bill</button>
+                </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="tableitem" id="table3" ondragover="make(event)" ondrop="drop(event,this)" >
+            <h3>Table-3</h3><br>
+            <p id="itemst3">Items: 0 </p>
+            <p id="totalt3">Total: 0 </p>
+            <button id="view3"  onclick="showTable('t3')">Order Details</button>
+
+            <div class="summary" id="summary-t3">
+                <div class="content">
+                   <div class="summary-order">
+                       <h2>Order Details</h2>
+                       <span class="close" onclick="closeTable('t3')">&times;</span>
+                   </div>
+                   <div class="modal-body" id = "body3">
+                       <table class ="table table-striped" id="t3">
+                           <thead>
+                               <tr>
+                                   <th>Items</th>
+                                   <th>Price</th>
+                                   <th>Quantity</th>
+                                   <th>Delete</th>
+                               </tr>
+                           </thead>
+                       </table>
+                       <p id="Total"></p>
+                   </div>
+                   <div class="modal-footer">
+                    <button id="reset3" onclick="resetTable('t3')">Generate Bill</button>
+                   </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="right">
+        <h2>Menu</h2>
+        <div class="searchitem">
+            <input type="text" placeholder="Search Item" id="searchitem" onkeyup="searchItem()">
+            <button type="submit">Search</button>
+        </div>
+        <div class="item"  >
+            <h3 id="item1" draggable="true" ondragstart="drag(event)">Chicken Biryani <br>
+            Price: 350</h3>
+        </div>
+        <div class="item" >
+            <h3  id="item2" draggable="true" ondragstart="drag(event)">Chicken 65 <br>
+            Price: 250</h3>
+        </div>
+        <div class="item"  >
+            <h3  id="item3" draggable="true" ondragstart="drag(event)">Chicken Kebab <br>
+            Price: 250</h3>
+        </div>
+        <div class="item">
+            <h3  id="item4" draggable="true" ondragstart="drag(event)">Paneer Biryani <br>
+            Price: 200</h3>
+        </div>
+        <div class="item" >
+            <h3 id="item5" draggable="true" ondragstart="drag(event)">Paneer Majestic <br>
+            Price: 200</h3>
+        </div>
+
+
+    </div>
+
+</body>
+<script src="script.js" text="type/javascript"></script>
+</html>
